@@ -7,7 +7,7 @@ description = "Das Liquip Buch behandelt alle Features des Liquip-Plugins."
 
 [output.html]
 mathjax-support = true
-site-url = "/docs-de/"
+site-url = "/docs-en/"
 git-repository-url = "https://github.com/liquip/docs-de"
 
 [output.html.search]
