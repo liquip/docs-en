@@ -1,13 +1,13 @@
 <!DOCTYPE HTML>
-<html lang="de" class="sidebar-visible no-js light">
+<html lang="en" class="sidebar-visible no-js light">
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Liquip Dokumentation</title>
+        <title>Liquip documentation</title>
         <meta name="robots" content="noindex" />
         <!-- Custom HTML head -->
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <meta name="description" content="Das Liquip Buch behandelt alle Features des Liquip-Plugins.">
+        <meta name="description" content="The Liquip-wiki covering the features of Liquip.">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff" />
 
@@ -78,7 +78,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="index.html">Start</a></li><li class="chapter-item expanded "><a href="chapter_1.html"><strong aria-hidden="true">1.</strong> Chapter 1</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="index.html">Introduction</a></li><li class="chapter-item expanded "><a href="getting_started.html"><strong aria-hidden="true">1.</strong> Getting Started</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="getting_started/installation.html"><strong aria-hidden="true">1.1.</strong> Installation</a></li><li class="chapter-item expanded "><a href="getting_started/config_format.html"><strong aria-hidden="true">1.2.</strong> The config format</a></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -107,13 +107,13 @@
                         </button>
                     </div>
 
-                    <h1 class="menu-title">Liquip Dokumentation</h1>
+                    <h1 class="menu-title">Liquip documentation</h1>
 
                     <div class="right-buttons">
                         <a href="print.html" title="Print this book" aria-label="Print this book">
                             <i id="print-button" class="fa fa-print"></i>
                         </a>
-                        <a href="https://github.com/liquip/docs-de" title="Git repository" aria-label="Git repository">
+                        <a href="https://github.com/liquip/docs-en" title="Git repository" aria-label="Git repository">
                             <i id="git-repository-button" class="fa fa-github"></i>
                         </a>
                     </div>
@@ -141,9 +141,97 @@
                 <div id="content" class="content">
                     <main>
                         <p>Other versions: <a href="https://liquip.github.io/docs-de">Deutsch</a></p>
-<h1 id="start"><a class="header" href="#start">Start</a></h1>
-<p>Welcome to the Liquip plugin-documentation!</p>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="chapter-1"><a class="header" href="#chapter-1">Chapter 1</a></h1>
+<h1 id="introduction"><a class="header" href="#introduction">Introduction</a></h1>
+<p>Welcome to the english Liquip-wiki. This book will teach you how to use the Liquip-plugin, which features it has and how to extend it with your own plugins.</p>
+<h2 id="source-code"><a class="header" href="#source-code">Source Code</a></h2>
+<p>The source code from which this book is generated can be found on <a href="https://github.com/liquip/docs-en">GitHub</a>.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="getting-started"><a class="header" href="#getting-started">Getting Started</a></h1>
+<p>To get started with Liquip, you first need to understand some crucial parts of the plugin. In this chapter, we will discuss:</p>
+<ul>
+<li>Building and Installing the plugin</li>
+<li>Understanding the config format</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="installation"><a class="header" href="#installation">Installation</a></h1>
+<p>To install the plugin you currently need to build it by yourself. In the following guide you will be taught to do so step by step.</p>
+<h2 id="prerequisites"><a class="header" href="#prerequisites">Prerequisites</a></h2>
+<p>To build the plugin you need the following:</p>
+<ul>
+<li>Java 17 or higher</li>
+<li>Git</li>
+</ul>
+<h2 id="installing-java"><a class="header" href="#installing-java">Installing Java</a></h2>
+<p>To install Java you can go to <a href="https://adoptium.net">Adoptium</a>. They provide prebuilt Java-binaries and even installers for Java.</p>
+<h2 id="installing-git"><a class="header" href="#installing-git">Installing Git</a></h2>
+<p>To install Git you can go to <a href="https://git-scm.com/downloads">https://git-scm.com/downloads</a> and install git from there.</p>
+<h2 id="setup"><a class="header" href="#setup">Setup</a></h2>
+<p>To set up the project you first need to clone the repository. To do so create a directory somewhere and open your terminal there and run the following command:</p>
+<pre><code class="language-sh">git clone https://github.com/liquip/liquip-plugin.git .
+</code></pre>
+<p>This will clone the repository into the current directory. Note that the directory must be empty to do so.</p>
+<h2 id="building"><a class="header" href="#building">Building</a></h2>
+<p>To now build the plugin you run the following command in the directory you cloned to:</p>
+<p>For Linux / macOS:</p>
+<pre><code class="language-sh">./gradlew build
+</code></pre>
+<p>For Windows:</p>
+<pre><code class="language-bat">.\gradlew.bat build
+</code></pre>
+<p>If you have the gradle-cli installed you may also run the following:</p>
+<pre><code class="language-sh">gradle build
+</code></pre>
+<p>This should start gradle and build the plugin. The plugin is seperated into three submodules, being 'core', 'example-plugin' and 'gui'. The core-module is the Liquip-plugin. The example-plugin contains some experimental features. The gui-module contains the code for the inventory-guis. All three modules will be built but you most likely are just interested in the core-module. The output can be found in the <code>core/build/libs</code> directory. You want to take the jar-file without any '-dev' or '-all' in it and put it inside your plugins-directory.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="the-config-format"><a class="header" href="#the-config-format">The Config Format</a></h1>
+<p>Many plugins use the <a href="https://en.wikipedia.org/wiki/YAML">YAML configuration-language</a>. We instead use a different
+config-format. We think it is less error-prone as it does not rely on indentation. It is called HOCON and we recommend
+the <code>.conf</code> file-extension. You can read more about
+it <a href="https://github.com/lightbend/config/blob/4458ea947a7a2a668bb811a122455f1f05975172/HOCON.md">here</a>, but we will also
+explain the basics in this short guide.</p>
+<h2 id="data-types"><a class="header" href="#data-types">Data types</a></h2>
+<p>In HOCON there are the following data types:</p>
+<ul>
+<li>Object</li>
+<li>List</li>
+<li>Integer</li>
+<li>Floating-point number</li>
+<li>String/Text</li>
+<li>Boolean (true/false)</li>
+</ul>
+<h2 id="representation"><a class="header" href="#representation">Representation</a></h2>
+<p>The config-file itself is an object. It contains key-value pairs. To assign a value to a key you write the key followed
+by an equals-sign (<code>=</code>) or a colon (<code>:</code>) followed by the value. This will look like this:</p>
+<pre><code class="language-hocon">some_value = 42
+</code></pre>
+<p>or</p>
+<pre><code class="language-hocon">some_other_value: 13
+</code></pre>
+<h3 id="simple-types"><a class="header" href="#simple-types">Simple types</a></h3>
+<p>Integers are just written-out (e.g. <code>123</code>).</p>
+<p>Floats are written with a dot as separator (e.g. <code>4.5</code>).</p>
+<p>Strings are written in double-quotes (e.g. <code>&quot;Hello, world!&quot;</code>).</p>
+<p>Booleans are written as true or false (e.g. <code>true</code>).</p>
+<h3 id="objects"><a class="header" href="#objects">Objects</a></h3>
+<p>Objects are written as key-value pairs surrounded by curly-braces (<code>{}</code>) separated by commas or newlines.</p>
+<p>Assigning an object to a key may look like this:</p>
+<pre><code class="language-hocon">some_object = {some_string = &quot;Hey&quot;, some_number = 456}
+</code></pre>
+<p>or this:</p>
+<pre><code class="language-hocon">some_other_object = {
+  some_other_string = &quot;Hey&quot;
+  some_other_number = 456
+}
+</code></pre>
+<h3 id="lists"><a class="header" href="#lists">Lists</a></h3>
+<p>Lists are written as values surrounded by square-brackets (<code>[]</code>) separated by commas or newlines.</p>
+<p>This may look like this:</p>
+<pre><code class="language-hocon">some_list = [1, 2.0, &quot;three&quot;]
+</code></pre>
+<p>or like this:</p>
+<pre><code class="language-hocon">some_other_list = [
+  1
+  2.0
+  &quot;three&quot;
+]
+</code></pre>
 
                     </main>
 
