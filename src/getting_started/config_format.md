@@ -23,7 +23,7 @@ The config-file itself is an object. It contains key-value pairs. To assign a va
 by an equals-sign (`=`) or a colon (`:`) followed by the value. This will look like this:
 
 ```hocon
-some_value = 42
+some_value: 42
 ```
 
 or
@@ -49,15 +49,15 @@ Objects are written as key-value pairs surrounded by curly-braces (`{}`) separat
 Assigning an object to a key may look like this:
 
 ```hocon
-some_object = {some_string = "Hey", some_number = 456}
+some_object: {some_string = "Hey", some_number = 456}
 ```
 
 or this:
 
 ```hocon
-some_other_object = {
-  some_other_string = "Hey"
-  some_other_number = 456
+some_other_object: {
+  some_other_string: "Hey"
+  some_other_number: 456
 }
 ```
 
@@ -68,13 +68,13 @@ Lists are written as values surrounded by square-brackets (`[]`) separated by co
 This may look like this:
 
 ```hocon
-some_list = [1, 2.0, "three"]
+some_list: [1, 2.0, "three"]
 ```
 
 or like this:
 
 ```hocon
-some_other_list = [
+some_other_list: [
   1
   2.0
   "three"
