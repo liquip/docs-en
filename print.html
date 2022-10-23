@@ -199,7 +199,7 @@ explain the basics in this short guide.</p>
 <h2 id="representation"><a class="header" href="#representation">Representation</a></h2>
 <p>The config-file itself is an object. It contains key-value pairs. To assign a value to a key you write the key followed
 by an equals-sign (<code>=</code>) or a colon (<code>:</code>) followed by the value. This will look like this:</p>
-<pre><code class="language-hocon">some_value = 42
+<pre><code class="language-hocon">some_value: 42
 </code></pre>
 <p>or</p>
 <pre><code class="language-hocon">some_other_value: 13
@@ -212,21 +212,21 @@ by an equals-sign (<code>=</code>) or a colon (<code>:</code>) followed by the v
 <h3 id="objects"><a class="header" href="#objects">Objects</a></h3>
 <p>Objects are written as key-value pairs surrounded by curly-braces (<code>{}</code>) separated by commas or newlines.</p>
 <p>Assigning an object to a key may look like this:</p>
-<pre><code class="language-hocon">some_object = {some_string = &quot;Hey&quot;, some_number = 456}
+<pre><code class="language-hocon">some_object: {some_string = &quot;Hey&quot;, some_number = 456}
 </code></pre>
 <p>or this:</p>
-<pre><code class="language-hocon">some_other_object = {
-  some_other_string = &quot;Hey&quot;
-  some_other_number = 456
+<pre><code class="language-hocon">some_other_object: {
+  some_other_string: &quot;Hey&quot;
+  some_other_number: 456
 }
 </code></pre>
 <h3 id="lists"><a class="header" href="#lists">Lists</a></h3>
 <p>Lists are written as values surrounded by square-brackets (<code>[]</code>) separated by commas or newlines.</p>
 <p>This may look like this:</p>
-<pre><code class="language-hocon">some_list = [1, 2.0, &quot;three&quot;]
+<pre><code class="language-hocon">some_list: [1, 2.0, &quot;three&quot;]
 </code></pre>
 <p>or like this:</p>
-<pre><code class="language-hocon">some_other_list = [
+<pre><code class="language-hocon">some_other_list: [
   1
   2.0
   &quot;three&quot;
