@@ -16,10 +16,10 @@ Liquip allows the following things:
 
 So you might do something like this:
 
-```json5
+```js
 {
-  // some comment
-  name: 'value',
-  'otherName': "otherValue"
+    // some comment
+    name: 'value',
+    'otherName': "otherValue"
 }
 ```
