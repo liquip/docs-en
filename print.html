@@ -5,8 +5,10 @@
         <meta charset="UTF-8">
         <title>Liquip documentation</title>
         <meta name="robots" content="noindex" />
+
+
         <!-- Custom HTML head -->
-        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        
         <meta name="description" content="The Liquip-wiki covering the features of Liquip.">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff" />
@@ -17,27 +19,30 @@
         <link rel="stylesheet" href="css/general.css">
         <link rel="stylesheet" href="css/chrome.css">
         <link rel="stylesheet" href="css/print.css" media="print">
+
         <!-- Fonts -->
         <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
         <link rel="stylesheet" href="fonts/fonts.css">
+
         <!-- Highlight.js Stylesheets -->
         <link rel="stylesheet" href="highlight.css">
         <link rel="stylesheet" href="tomorrow-night.css">
         <link rel="stylesheet" href="ayu-highlight.css">
 
         <!-- Custom theme stylesheets -->
+
         <!-- MathJax -->
-        <script async type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     </head>
     <body>
         <!-- Provide site root to javascript -->
-        <script type="text/javascript">
+        <script>
             var path_to_root = "";
             var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
         </script>
 
         <!-- Work around some values being stored in localStorage wrapped in quotes -->
-        <script type="text/javascript">
+        <script>
             try {
                 var theme = localStorage.getItem('mdbook-theme');
                 var sidebar = localStorage.getItem('mdbook-sidebar');
@@ -53,7 +58,7 @@
         </script>
 
         <!-- Set the theme before any content is loaded, prevents flash -->
-        <script type="text/javascript">
+        <script>
             var theme;
             try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
             if (theme === null || theme === undefined) { theme = default_theme; }
@@ -65,7 +70,7 @@
         </script>
 
         <!-- Hide / unhide sidebar before it is displayed -->
-        <script type="text/javascript">
+        <script>
             var html = document.querySelector('html');
             var sidebar = 'hidden';
             if (document.body.clientWidth >= 1080) {
@@ -86,7 +91,7 @@
         <div id="page-wrapper" class="page-wrapper">
 
             <div class="page">
-                <div id="menu-bar-hover-placeholder"></div>
+                                <div id="menu-bar-hover-placeholder"></div>
                 <div id="menu-bar" class="menu-bar sticky bordered">
                     <div class="left-buttons">
                         <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
@@ -96,7 +101,7 @@
                             <i class="fa fa-paint-brush"></i>
                         </button>
                         <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
-                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
@@ -116,6 +121,7 @@
                         <a href="https://github.com/liquip/docs-en" title="Git repository" aria-label="Git repository">
                             <i id="git-repository-button" class="fa fa-github"></i>
                         </a>
+
                     </div>
                 </div>
 
@@ -129,8 +135,9 @@
                         </ul>
                     </div>
                 </div>
+
                 <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
-                <script type="text/javascript">
+                <script>
                     document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
                     document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
                     Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
@@ -148,122 +155,93 @@
 <div style="break-before: page; page-break-before: always;"></div><h1 id="getting-started"><a class="header" href="#getting-started">Getting Started</a></h1>
 <p>To get started with Liquip, you first need to understand some crucial parts of the plugin. In this chapter, we will discuss:</p>
 <ul>
-<li>Building and Installing the plugin</li>
-<li>Understanding the config format</li>
+<li>Installing the plugin</li>
+<li>Understanding the config</li>
 </ul>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="installation"><a class="header" href="#installation">Installation</a></h1>
-<p>To install the plugin you currently need to build it by yourself. In the following guide you will be taught to do so step by step.</p>
+<p>To install the plugin you need to download the latest version of it from the
+<a href="https://github.com/liquip/liquip-plugin/releases">GitHub releases tab</a> and put the inside of your
+servers plugin directory. In the following guide you will be taught to do so step by step.</p>
 <h2 id="prerequisites"><a class="header" href="#prerequisites">Prerequisites</a></h2>
-<p>To build the plugin you need the following:</p>
+<p>To use the plugin you need the following:</p>
 <ul>
 <li>Java 17 or higher</li>
-<li>Git</li>
+<li>Paper 1.19 server (other versions are not tested)</li>
 </ul>
 <h2 id="installing-java"><a class="header" href="#installing-java">Installing Java</a></h2>
-<p>To install Java you can go to <a href="https://adoptium.net">Adoptium</a>. They provide prebuilt Java-binaries and even installers for Java.</p>
-<h2 id="installing-git"><a class="header" href="#installing-git">Installing Git</a></h2>
-<p>To install Git you can go to <a href="https://git-scm.com/downloads">https://git-scm.com/downloads</a> and install git from there.</p>
-<h2 id="setup"><a class="header" href="#setup">Setup</a></h2>
-<p>To set up the project you first need to clone the repository. To do so create a directory somewhere and open your terminal there and run the following command:</p>
-<pre><code class="language-sh">git clone https://github.com/liquip/liquip-plugin.git .
-</code></pre>
-<p>This will clone the repository into the current directory. Note that the directory must be empty to do so.</p>
-<h2 id="building"><a class="header" href="#building">Building</a></h2>
-<p>To now build the plugin you run the following command in the directory you cloned to:</p>
-<p>For Linux / macOS:</p>
-<pre><code class="language-sh">./gradlew build
-</code></pre>
-<p>For Windows:</p>
-<pre><code class="language-bat">.\gradlew.bat build
-</code></pre>
-<p>If you have the gradle-cli installed you may also run the following:</p>
-<pre><code class="language-sh">gradle build
-</code></pre>
-<p>This should start gradle and build the plugin. The plugin is seperated into three submodules, being 'core', 'example-plugin' and 'gui'. The core-module is the Liquip-plugin. The example-plugin contains some experimental features. The gui-module contains the code for the inventory-guis. All three modules will be built but you most likely are just interested in the core-module. The output can be found in the <code>core/build/libs</code> directory. You want to take the jar-file without any '-dev' or '-all' in it and put it inside your plugins-directory.</p>
+<p>To install Java you can go to <a href="https://adoptium.net">Adoptium</a>. They provide prebuilt Java-binaries
+and even installers for Java.</p>
+<h2 id="installing-paper"><a class="header" href="#installing-paper">Installing Paper</a></h2>
+<p>To install Paper please follow <a href="https://docs.papermc.io/paper/getting-started">this</a> guide.</p>
+<h2 id="installing-the-plugin"><a class="header" href="#installing-the-plugin">Installing the plugin</a></h2>
+<p>The last step to installing Liquip is downloading the plugin from
+the <a href="https://github.com/liquip/liquip-plugin/releases">releases tab</a> on our GitHub.</p>
+<p>On that page search for a file called somewhat similar to <code>liquip-paper-standalone-1.0.0-beta.jar</code>.</p>
+<p>This is the plugin archive you can then download and put into the <code>plugins</code> directory inside the
+directory you installed your paper server to.</p>
+<p>After that restart your server, and you should be good to go.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="the-config-format"><a class="header" href="#the-config-format">The Config Format</a></h1>
-<p>Many plugins use the <a href="https://en.wikipedia.org/wiki/YAML">YAML configuration-language</a>. We instead use a different
-config-format. We think it is less error-prone as it does not rely on indentation. It is called HOCON and we recommend
-the <code>.conf</code> file-extension. You can read more about
-it <a href="https://github.com/lightbend/config/blob/4458ea947a7a2a668bb811a122455f1f05975172/HOCON.md">here</a>, but we will also
-explain the basics in this short guide.</p>
-<h2 id="data-types"><a class="header" href="#data-types">Data types</a></h2>
-<p>In HOCON there are the following data types:</p>
+<p>Liquip uses a modified version of <a href="https://en.wikipedia.org/wiki/JSON">JSON</a> for all of its config
+files.</p>
+<p>If you don't know JSON yet, you easily learn it with the Wikipedia article.</p>
+<p><a href="https://en.wikipedia.org/wiki/JSON#Data_types">This</a> position is especially important.</p>
+<h2 id="differences"><a class="header" href="#differences">Differences</a></h2>
+<p>Liquip allows the following things:</p>
 <ul>
-<li>Object</li>
-<li>List</li>
-<li>Integer</li>
-<li>Floating-point number</li>
-<li>String/Text</li>
-<li>Boolean (true/false)</li>
+<li>unquoted field names</li>
+<li>comments</li>
+<li>single quotes</li>
 </ul>
-<h2 id="representation"><a class="header" href="#representation">Representation</a></h2>
-<p>The config-file itself is an object. It contains key-value pairs. To assign a value to a key you write the key followed
-by an equals-sign (<code>=</code>) or a colon (<code>:</code>) followed by the value. This will look like this:</p>
-<pre><code class="language-hocon">some_value: 42
-</code></pre>
-<p>or</p>
-<pre><code class="language-hocon">some_other_value: 13
-</code></pre>
-<h3 id="simple-types"><a class="header" href="#simple-types">Simple types</a></h3>
-<p>Integers are just written-out (e.g. <code>123</code>).</p>
-<p>Floats are written with a dot as separator (e.g. <code>4.5</code>).</p>
-<p>Strings are written in double-quotes (e.g. <code>&quot;Hello, world!&quot;</code>).</p>
-<p>Booleans are written as true or false (e.g. <code>true</code>).</p>
-<h3 id="objects"><a class="header" href="#objects">Objects</a></h3>
-<p>Objects are written as key-value pairs surrounded by curly-braces (<code>{}</code>) separated by commas or newlines.</p>
-<p>Assigning an object to a key may look like this:</p>
-<pre><code class="language-hocon">some_object: {some_string = &quot;Hey&quot;, some_number = 456}
-</code></pre>
-<p>or this:</p>
-<pre><code class="language-hocon">some_other_object: {
-  some_other_string: &quot;Hey&quot;
-  some_other_number: 456
+<p>So you might do something like this:</p>
+<pre><code class="language-json5">{
+  // some comment
+  name: 'value',
+  'otherName': &quot;otherValue&quot;
 }
-</code></pre>
-<h3 id="lists"><a class="header" href="#lists">Lists</a></h3>
-<p>Lists are written as values surrounded by square-brackets (<code>[]</code>) separated by commas or newlines.</p>
-<p>This may look like this:</p>
-<pre><code class="language-hocon">some_list: [1, 2.0, &quot;three&quot;]
-</code></pre>
-<p>or like this:</p>
-<pre><code class="language-hocon">some_other_list: [
-  1
-  2.0
-  &quot;three&quot;
-]
 </code></pre>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
+
+
                         <div style="clear: both"></div>
                     </nav>
                 </div>
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
+
             </nav>
 
         </div>
 
-        <script type="text/javascript">
+
+
+
+        <script>
             window.playground_copyable = true;
         </script>
-        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
-        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
-        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
+
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
 
         <!-- Custom JS scripts -->
-        <script type="text/javascript">
+
+        <script>
         window.addEventListener('load', function() {
             MathJax.Hub.Register.StartupHook('End', function() {
                 window.setTimeout(window.print, 100);
             });
         });
         </script>
+
     </body>
 </html>
