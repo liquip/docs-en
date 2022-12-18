@@ -22,6 +22,6 @@ This table shows all the features currently available in `paper-standalone` by d
 
 ## Planned / in progress
 
-| Key                            | Description                      |
-|--------------------------------|----------------------------------|
-| `minecraft:attribute_modifier` | Adds attribute modifiers to item |
+| Key                            | Description                     |
+|--------------------------------|---------------------------------|
+| `minecraft:attribute_modifier` | Add attribute modifiers to item |
