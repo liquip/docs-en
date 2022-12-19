@@ -9,6 +9,8 @@ description = "The Liquip-wiki covering the features of Liquip."
 mathjax-support = true
 site-url = "/docs-en/"
 git-repository-url = "https://github.com/liquip/docs-en"
+default-theme = "rust"
+preferred-dark-theme = "ayu"
 
 [output.html.search]
 limit-results = 20
