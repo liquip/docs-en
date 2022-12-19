@@ -7,4 +7,5 @@
     - [The config format](getting-started/config-format.md)
 - [Custom items](custom-items/index.md)
 - [Reference](reference/index.md)
+    - [Types](reference/types.md)
     - [Default features](reference/default-features.md)
