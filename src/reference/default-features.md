@@ -10,11 +10,11 @@ This table shows all the features currently available in `paper-standalone` by d
 | `minecraft:hide_enchantments`   | Hide Vanilla enchantments from item's lore |      `null`/`true`      |
 | `minecraft:hide_potion_effects` | Hide potion effects from item's lore       |      `null`/`true`      |
 | `minecraft:hide_unbreakable`    | Hide unbreakable from item's lore          |      `null`/`true`      |
-| `minecraft:custom_model_data`   | Set custom model data for item             |         integer         |
-| `minecraft:dye_leather`         | Dye item made out of leather               | hex string/<br/>integer |
+| `minecraft:custom_model_data`   | Set custom model data for item             |         Integer         |
+| `minecraft:dye_leather`         | Dye item made out of leather               | Hex string/<br/>Integer |
+| `minecraft:attribute_modifier`  | Add attribute modifiers to item            |   Attribute modifier    |
 
 ## Planned / in progress
 
 | Key                            | Description                     |
 |--------------------------------|---------------------------------|
-| `minecraft:attribute_modifier` | Add attribute modifiers to item |
