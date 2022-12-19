@@ -23,11 +23,22 @@ If `operation` is `"+"`, `amount` will be added to the `attribute`.
 If `operation` is `"*"`, `attribute`'s value will be multiplied by `amount` + 1.
 This means it will show up as e.g. `+50%`.
 
+### Example
+
+```json
+{
+    "attribute": "generic_attack_damage",
+    "name": "myAttackDamageModifier",
+    "amount": 0.5,
+    "operation": "*"
+}
+```
+
 ## Attribute
 
-An attribute is one of the following strings:
+An attribute is one of the following strings representing an attribute of an entity:
 
-| Key                            | Description                                 |
+| String                         | Description                                 |
 |--------------------------------|---------------------------------------------|
 | `generic_armor`                | Armor                                       |
 | `generic_armor_toughness`      | Armor durability                            |
