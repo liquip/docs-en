@@ -27,10 +27,10 @@ This means it will show up as e.g. `+50%`.
 
 ```json
 {
-    "attribute": "generic_attack_damage",
-    "name": "myAttackDamageModifier",
-    "amount": 0.5,
-    "operation": "*"
+  "attribute": "generic_attack_damage",
+  "name": "myAttackDamageModifier",
+  "amount": 0.5,
+  "operation": "*"
 }
 ```
 
