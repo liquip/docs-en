@@ -211,8 +211,48 @@ files.</p>
 </ul>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="types"><a class="header" href="#types">Types</a></h1>
 <div class="table-wrapper"><table><thead><tr><th>Name</th><th>Description</th><th style="text-align: center">Example</th></tr></thead><tbody>
-<tr><td>integer</td><td>Number without decimal point</td><td style="text-align: center"><code>42</code></td></tr>
-<tr><td>hex string</td><td>Hexadecimal number with hashtag in front of it</td><td style="text-align: center"><code>#0ABCDE</code></td></tr>
+<tr><td>Integer</td><td>Number without decimal point</td><td style="text-align: center"><code>42</code></td></tr>
+<tr><td>Float</td><td>Number with optional decimal point</td><td style="text-align: center"><code>1.5</code></td></tr>
+<tr><td>String</td><td>Text surrounded by double quotes</td><td style="text-align: center"><code>&quot;Hello&quot;</code></td></tr>
+<tr><td>Hex string</td><td>Hexadecimal number with hashtag in front of it</td><td style="text-align: center"><code>&quot;#0ABCDE&quot;</code></td></tr>
+</tbody></table>
+</div>
+<h2 id="attribute-modifier"><a class="header" href="#attribute-modifier">Attribute modifier</a></h2>
+<p>An attribute modifier may be an object or a list of objects.</p>
+<p>Each object has the following fields:</p>
+<ul>
+<li>attribute: <code>Attribute</code></li>
+<li>name: <code>String</code></li>
+<li>amount: <code>Float</code></li>
+<li>operation: <code>&quot;+&quot;</code>/<code>&quot;*&quot;</code></li>
+</ul>
+<p>If <code>operation</code> is <code>&quot;+&quot;</code>, <code>amount</code> will be added to the <code>attribute</code>.</p>
+<p>If <code>operation</code> is <code>&quot;*&quot;</code>, <code>attribute</code>'s value will be multiplied by <code>amount</code> + 1.
+This means it will show up as e.g. <code>+50%</code>.</p>
+<h3 id="example"><a class="header" href="#example">Example</a></h3>
+<pre><code class="language-json">{
+    &quot;attribute&quot;: &quot;generic_attack_damage&quot;,
+    &quot;name&quot;: &quot;myAttackDamageModifier&quot;,
+    &quot;amount&quot;: 0.5,
+    &quot;operation&quot;: &quot;*&quot;
+}
+</code></pre>
+<h2 id="attribute"><a class="header" href="#attribute">Attribute</a></h2>
+<p>An attribute is one of the following strings representing an attribute of an entity:</p>
+<div class="table-wrapper"><table><thead><tr><th>String</th><th>Description</th></tr></thead><tbody>
+<tr><td><code>generic_armor</code></td><td>Armor</td></tr>
+<tr><td><code>generic_armor_toughness</code></td><td>Armor durability</td></tr>
+<tr><td><code>generic_attack_damage</code></td><td>Attack damage</td></tr>
+<tr><td><code>generic_attack_knockback</code></td><td>Attack knock-back</td></tr>
+<tr><td><code>generic_attack_speed</code></td><td>Attack speed</td></tr>
+<tr><td><code>generic_flying_speed</code></td><td>Flying speed</td></tr>
+<tr><td><code>generic_follow_range</code></td><td>Range at which an entity will follow others</td></tr>
+<tr><td><code>generic_knockback_resistance</code></td><td>Resistance to knock-back</td></tr>
+<tr><td><code>generic_luck</code></td><td>Luck bonus</td></tr>
+<tr><td><code>generic_max_health</code></td><td>Maximum health</td></tr>
+<tr><td><code>generic_movement_speed</code></td><td>Movement speed</td></tr>
+<tr><td><code>horse_jump_strength</code></td><td>Horse's jumping strength</td></tr>
+<tr><td><code>zombie_spawn_reinforcements</code></td><td>Chance of a zombie spawning reinforcements</td></tr>
 </tbody></table>
 </div><div style="break-before: page; page-break-before: always;"></div><h1 id="default-features"><a class="header" href="#default-features">Default features</a></h1>
 <p>This table shows all the features currently available in <code>paper-standalone</code> by default:</p>
@@ -223,13 +263,13 @@ files.</p>
 <tr><td><code>minecraft:hide_enchantments</code></td><td>Hide Vanilla enchantments from item's lore</td><td style="text-align: center"><code>null</code>/<code>true</code></td></tr>
 <tr><td><code>minecraft:hide_potion_effects</code></td><td>Hide potion effects from item's lore</td><td style="text-align: center"><code>null</code>/<code>true</code></td></tr>
 <tr><td><code>minecraft:hide_unbreakable</code></td><td>Hide unbreakable from item's lore</td><td style="text-align: center"><code>null</code>/<code>true</code></td></tr>
-<tr><td><code>minecraft:custom_model_data</code></td><td>Set custom model data for item</td><td style="text-align: center">integer</td></tr>
-<tr><td><code>minecraft:dye_leather</code></td><td>Dye item made out of leather</td><td style="text-align: center">hex string/<br/>integer</td></tr>
+<tr><td><code>minecraft:custom_model_data</code></td><td>Set custom model data for item</td><td style="text-align: center">Integer</td></tr>
+<tr><td><code>minecraft:dye_leather</code></td><td>Dye item made out of leather</td><td style="text-align: center">Hex string/<br/>Integer</td></tr>
+<tr><td><code>minecraft:attribute_modifier</code></td><td>Add attribute modifiers to item</td><td style="text-align: center">Attribute modifier</td></tr>
 </tbody></table>
 </div>
 <h2 id="planned--in-progress"><a class="header" href="#planned--in-progress">Planned / in progress</a></h2>
 <div class="table-wrapper"><table><thead><tr><th>Key</th><th>Description</th></tr></thead><tbody>
-<tr><td><code>minecraft:attribute_modifier</code></td><td>Add attribute modifiers to item</td></tr>
 </tbody></table>
 </div>
                     </main>
