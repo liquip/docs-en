@@ -10,6 +10,7 @@ If you don't know JSON yet, you easily learn it with the Wikipedia article.
 ## Differences
 
 Liquip allows the following things:
+
 * unquoted field names
 * comments
 * single quotes

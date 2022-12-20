@@ -27,7 +27,6 @@ the [releases tab](https://github.com/liquip/liquip-plugin/releases) on our GitH
 
 On that page search for a file called somewhat similar to `liquip-paper-standalone-1.0.0-beta.jar`.
 
-
 This is the plugin archive you can then download and put into the `plugins` directory inside the
 directory you installed your paper server to.
 

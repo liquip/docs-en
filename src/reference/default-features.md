@@ -16,5 +16,5 @@ This table shows all the features currently available in `paper-standalone` by d
 
 ## Planned / in progress
 
-| Key                            | Description                     |
-|--------------------------------|---------------------------------|
+| Key | Description |
+|-----|-------------|
