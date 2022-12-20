@@ -3,8 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Page not found - Liquip documentation</title>
-        <base href="/docs-en/">
+        <title>Minimal item config - Liquip documentation</title>
 
 
         <!-- Custom HTML head -->
@@ -13,21 +12,21 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff" />
 
-        <link rel="icon" href="favicon.svg">
-        <link rel="shortcut icon" href="favicon.png">
-        <link rel="stylesheet" href="css/variables.css">
-        <link rel="stylesheet" href="css/general.css">
-        <link rel="stylesheet" href="css/chrome.css">
-        <link rel="stylesheet" href="css/print.css" media="print">
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
 
         <!-- Fonts -->
-        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
-        <link rel="stylesheet" href="fonts/fonts.css">
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
 
         <!-- Highlight.js Stylesheets -->
-        <link rel="stylesheet" href="highlight.css">
-        <link rel="stylesheet" href="tomorrow-night.css">
-        <link rel="stylesheet" href="ayu-highlight.css">
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
 
         <!-- Custom theme stylesheets -->
 
@@ -37,7 +36,7 @@
     <body>
         <!-- Provide site root to javascript -->
         <script>
-            var path_to_root = "";
+            var path_to_root = "../";
             var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "ayu" : "rust";
         </script>
 
@@ -83,7 +82,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="index.html">Introduction</a></li><li class="chapter-item expanded "><a href="getting-started/index.html"><strong aria-hidden="true">1.</strong> Getting started</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="getting-started/installation.html"><strong aria-hidden="true">1.1.</strong> Installation</a></li><li class="chapter-item expanded "><a href="getting-started/config-format.html"><strong aria-hidden="true">1.2.</strong> The config format</a></li></ol></li><li class="chapter-item expanded "><a href="custom-items/index.html"><strong aria-hidden="true">2.</strong> Custom items</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="custom-items/registration.html"><strong aria-hidden="true">2.1.</strong> Registration</a></li><li class="chapter-item expanded "><a href="custom-items/minimal-item-config.html"><strong aria-hidden="true">2.2.</strong> Minimal item config</a></li></ol></li><li class="chapter-item expanded "><a href="reference/index.html"><strong aria-hidden="true">3.</strong> Reference</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="reference/types.html"><strong aria-hidden="true">3.1.</strong> Types</a></li><li class="chapter-item expanded "><a href="reference/default-features.html"><strong aria-hidden="true">3.2.</strong> Default features</a></li></ol></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../index.html">Introduction</a></li><li class="chapter-item expanded "><a href="../getting-started/index.html"><strong aria-hidden="true">1.</strong> Getting started</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../getting-started/installation.html"><strong aria-hidden="true">1.1.</strong> Installation</a></li><li class="chapter-item expanded "><a href="../getting-started/config-format.html"><strong aria-hidden="true">1.2.</strong> The config format</a></li></ol></li><li class="chapter-item expanded "><a href="../custom-items/index.html"><strong aria-hidden="true">2.</strong> Custom items</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../custom-items/registration.html"><strong aria-hidden="true">2.1.</strong> Registration</a></li><li class="chapter-item expanded "><a href="../custom-items/minimal-item-config.html" class="active"><strong aria-hidden="true">2.2.</strong> Minimal item config</a></li></ol></li><li class="chapter-item expanded "><a href="../reference/index.html"><strong aria-hidden="true">3.</strong> Reference</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../reference/types.html"><strong aria-hidden="true">3.1.</strong> Types</a></li><li class="chapter-item expanded "><a href="../reference/default-features.html"><strong aria-hidden="true">3.2.</strong> Default features</a></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -115,7 +114,7 @@
                     <h1 class="menu-title">Liquip documentation</h1>
 
                     <div class="right-buttons">
-                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
                             <i id="print-button" class="fa fa-print"></i>
                         </a>
                         <a href="https://github.com/liquip/docs-en" title="Git repository" aria-label="Git repository">
@@ -147,14 +146,44 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="document-not-found-404"><a class="header" href="#document-not-found-404">Document not found (404)</a></h1>
-<p>This URL is invalid, sorry. Please use the navigation bar or search to continue.</p>
+                        <h1 id="minimal-item-config"><a class="header" href="#minimal-item-config">Minimal item config</a></h1>
+<p>The minimal config that you put inside your item files looks like this:</p>
+<pre><code class="language-json">{
+  &quot;key&quot;: &quot;test:test_item&quot;,
+  &quot;material&quot;: &quot;minecraft:paper&quot;,
+  &quot;displayName&quot;: &quot;&lt;blue&gt;Test Item&quot;
+}
+</code></pre>
+<p>In the next chapters you will learn about more features of the item configuration but for now this
+is all you will need.</p>
+<p>The <code>key</code> field is the key your item will be identified with. It consists of a first part, the
+namespace, and a second part the key. The namespace should be the name of the group of items you
+want to create or for plugin developers the name of their plugin. The both parts should be all
+lowercase and may separate words with underscores. The second part may contain slashes to further
+group items.<sup class="footnote-reference"><a href="#resource-location">1</a></sup></p>
+<p>The <code>material</code> field is a simple minecraft item identifier used in command. You can find these on
+the <a href="https://minecraft.fandom.com/wiki/Minecraft_Wiki">unofficial Minecraft Wiki</a>'s page of the
+item. For paper for example you can find the key <a href="https://minecraft.fandom.com/wiki/Paper#ID">here</a>.
+The namespace will always be <code>minecraft</code>.</p>
+<p>The <code>displayName</code> field is a <a href="https://docs.adventure.kyori.net/minimessage/format.html">MiniMessage</a>
+component. This allows you to format the name of your item with &quot;modern&quot; features like RGB colors.</p>
+<p>This will add a new item with the identifier <code>test:test_item</code> made out of paper to Liquip. If you
+give it to yourself with <code>/liquip give test:test_item</code> it will have the name <code>Test Item</code> colored in
+blue.</p>
+<p><sup class="footnote-reference"><a href="#resource-location">1</a></sup> For further information read
+<a href="https://minecraft.fandom.com/wiki/Resource_location">this</a>.</p>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../custom-items/registration.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
 
+                            <a rel="next" href="../reference/index.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
 
                         <div style="clear: both"></div>
                     </nav>
@@ -162,7 +191,13 @@
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../custom-items/registration.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
 
+                    <a rel="next" href="../reference/index.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
             </nav>
 
         </div>
@@ -175,13 +210,13 @@
         </script>
 
 
-        <script src="elasticlunr.min.js"></script>
-        <script src="mark.min.js"></script>
-        <script src="searcher.js"></script>
+        <script src="../elasticlunr.min.js"></script>
+        <script src="../mark.min.js"></script>
+        <script src="../searcher.js"></script>
 
-        <script src="clipboard.min.js"></script>
-        <script src="highlight.js"></script>
-        <script src="book.js"></script>
+        <script src="../clipboard.min.js"></script>
+        <script src="../highlight.js"></script>
+        <script src="../book.js"></script>
 
         <!-- Custom JS scripts -->
 
