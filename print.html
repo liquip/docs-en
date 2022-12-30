@@ -365,15 +365,8 @@ original by setting <code>operation</code> to <code>*</code>. Last will, for exa
 an attribute amount of 0.4 add 40% (or 4 damage) to the total damage. After appliance the damage
 will be 14.</p>
 <p>The <code>slot</code> represents what slot a player need to wear the item in to get the attribute modifiers
-applied to themselves. Possible values are:</p>
-<ul>
-<li><code>head</code> for the head</li>
-<li><code>chest</code> for the chest</li>
-<li><code>legs</code> for the legs</li>
-<li><code>feet</code> for the feet</li>
-<li><code>hand</code> for the main hand</li>
-<li><code>off_hand</code> for the offhand</li>
-</ul>
+applied to themselves. Possible values are can be found
+<a href="https://liquip.github.io/docs-en/reference/types.html#slot">here</a>.</p>
 <h2 id="several-attribute-modifiers"><a class="header" href="#several-attribute-modifiers">Several attribute modifiers</a></h2>
 <p>To add more attribute modifiers to one item you put them in a list like so:</p>
 <pre><code class="language-json">{
@@ -446,6 +439,18 @@ This means it will show up as e.g. <code>+50%</code>.</p>
 <tr><td><code>generic_movement_speed</code></td><td>Movement speed</td></tr>
 <tr><td><code>horse_jump_strength</code></td><td>Horse's jumping strength</td></tr>
 <tr><td><code>zombie_spawn_reinforcements</code></td><td>Chance of a zombie spawning reinforcements</td></tr>
+</tbody></table>
+</div>
+<h2 id="slot"><a class="header" href="#slot">Slot</a></h2>
+<p>Slots represent an equipment slot of a player like his hand. They may be one of the following values
+represented as a string:</p>
+<div class="table-wrapper"><table><thead><tr><th>String</th><th>Description</th></tr></thead><tbody>
+<tr><td><code>head</code></td><td>The player's head slot used for helmets</td></tr>
+<tr><td><code>chest</code></td><td>The player's chest slot used for chest-plates</td></tr>
+<tr><td><code>legs</code></td><td>The player's legs slot used for leggings</td></tr>
+<tr><td><code>feet</code></td><td>The player's feet slot used for boots</td></tr>
+<tr><td><code>hand</code></td><td>The player's main hand</td></tr>
+<tr><td><code>off_hand</code></td><td>The player's offhand</td></tr>
 </tbody></table>
 </div><div style="break-before: page; page-break-before: always;"></div><h1 id="default-features"><a class="header" href="#default-features">Default features</a></h1>
 <p>This table shows all the features currently available in <code>paper-standalone</code> by default:</p>
