@@ -53,3 +53,17 @@ An attribute is one of the following strings representing an attribute of an ent
 | `generic_movement_speed`       | Movement speed                              |
 | `horse_jump_strength`          | Horse's jumping strength                    |
 | `zombie_spawn_reinforcements`  | Chance of a zombie spawning reinforcements  |
+
+## Slot
+
+Slots represent an equipment slot of a player like his hand. They may be one of the following values
+represented as a string:
+
+| String     | Description                                   |
+|------------|-----------------------------------------------|
+| `head`     | The player's head slot used for helmets       |
+| `chest`    | The player's chest slot used for chest-plates |
+| `legs`     | The player's legs slot used for leggings      |
+| `feet`     | The player's feet slot used for boots         |
+| `hand`     | The player's main hand                        |
+| `off_hand` | The player's offhand                          |
