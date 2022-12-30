@@ -41,14 +41,8 @@ an attribute amount of 0.4 add 40% (or 4 damage) to the total damage. After appl
 will be 14.
 
 The `slot` represents what slot a player need to wear the item in to get the attribute modifiers
-applied to themselves. Possible values are:
-
-* `head` for the head
-* `chest` for the chest
-* `legs` for the legs
-* `feet` for the feet
-* `hand` for the main hand
-* `off_hand` for the offhand
+applied to themselves. Possible values are can be found
+[here](https://liquip.github.io/docs-en/reference/types.html#slot).
 
 ## Several attribute modifiers
 
