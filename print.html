@@ -336,11 +336,12 @@ than just enchantments.</p>
 </code></pre>
 <p>This would make your item - if it was made of leather - colored this specific color.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="attribute-modifiers"><a class="header" href="#attribute-modifiers">Attribute modifiers</a></h1>
-<p>Minecraft has a concept called attribute modifiers. It allows you to modify things like movement 
+<p>Minecraft has a concept called attribute modifiers. It allows you to modify things like movement
 speed of players.</p>
-<p>In the context of item creation they allow you to modify these things for the player holding or 
+<p>In the context of item creation they allow you to modify these things for the player holding or
 wearing your item.</p>
 <p>An item may have none to several attribute modifiers.</p>
+<h2 id="single-attribute-modifier"><a class="header" href="#single-attribute-modifier">Single attribute modifier</a></h2>
 <p>A single attribute modifier looks like this:</p>
 <pre><code class="language-json">{
   &quot;features&quot;: {
@@ -355,9 +356,47 @@ wearing your item.</p>
 }
 </code></pre>
 <p>This will give every player wearing the item on their feet a 25% speed boost.</p>
-<blockquote>
-<p><strong>This page is not done yet.</strong></p>
-</blockquote>
+<p>The <code>name</code> field is just a string to indicate from where the attribute modifier came.</p>
+<p>The field called <code>attribute</code> specifies what attribute should be changed. Possible values can be
+found <a href="https://liquip.github.io/docs-en/reference/types.html#attribute">here</a>.</p>
+<p>The amount the attribute should be changed by is indicated by <code>amount</code>.</p>
+<p>The amount can either be just added by setting <code>operation</code> to <code>+</code> or added in percent of the
+original by setting <code>operation</code> to <code>*</code>. Last will, for example, for a base damage amount of 10 and
+an attribute amount of 0.4 add 40% (or 4 damage) to the total damage. After appliance the damage
+will be 14.</p>
+<p>The <code>slot</code> represents what slot a player need to wear the item in to get the attribute modifiers
+applied to themselves. Possible values are:</p>
+<ul>
+<li><code>head</code> for the head</li>
+<li><code>chest</code> for the chest</li>
+<li><code>legs</code> for the legs</li>
+<li><code>feet</code> for the feet</li>
+<li><code>hand</code> for the main hand</li>
+<li><code>off_hand</code> for the offhand</li>
+</ul>
+<h2 id="several-attribute-modifiers"><a class="header" href="#several-attribute-modifiers">Several attribute modifiers</a></h2>
+<p>To add more attribute modifiers to one item you put them in a list like so:</p>
+<pre><code class="language-json">{
+  &quot;features&quot;: {
+    &quot;minecraft:attribute_modifier&quot;: [
+      {
+        &quot;name&quot;: &quot;myAttributeModifier&quot;,
+        &quot;attribute&quot;: &quot;generic_movement_speed&quot;,
+        &quot;amount&quot;: 0.25,
+        &quot;operation&quot;: &quot;*&quot;,
+        &quot;slot&quot;: &quot;feet&quot;
+      },
+      {
+        &quot;name&quot;: &quot;myOtherAttributeModifier&quot;,
+        &quot;attribute&quot;: &quot;generic_attack_damage&quot;,
+        &quot;amount&quot;: 5,
+        &quot;operation&quot;: &quot;+&quot;,
+        &quot;slot&quot;: &quot;feet&quot;
+      }
+    ]
+  }
+}
+</code></pre>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="reference"><a class="header" href="#reference">Reference</a></h1>
 <p>This chapter provides information over all currently available features of Liquip:</p>
 <ul>
