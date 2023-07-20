@@ -25,7 +25,7 @@ To install Paper please follow [this](https://docs.papermc.io/paper/getting-star
 The last step to installing Liquip is downloading the plugin from
 the [releases tab](https://github.com/liquip/liquip-plugin/releases) on our GitHub.
 
-On that page search for a file called somewhat similar to `liquip-paper-standalone-1.0.0-beta.jar`.
+On that page search for a file called somewhat similar to `paper-standalone-3.x.x-all.jar`.
 
 This is the plugin archive you can then download and put into the `plugins` directory inside the
 directory you installed your paper server to.

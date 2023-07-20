@@ -14,6 +14,7 @@ A single attribute modifier looks like this:
 
 ```json
 {
+  // ...
   "features": {
     "minecraft:attribute_modifier": {
       "name": "myAttributeModifier",
@@ -50,6 +51,7 @@ To add more attribute modifiers to one item you put them in a list like so:
 
 ```json
 {
+  // ...
   "features": {
     "minecraft:attribute_modifier": [
       {

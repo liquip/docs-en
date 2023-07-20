@@ -13,6 +13,7 @@ Features are stored in an object called `features` like this one:
 
 ```json
 {
+  // ...
   "features": {}
 }
 ```
@@ -21,6 +22,7 @@ For example, to make your item unbreakable you'd have to write this:
 
 ```json
 {
+  // ...
   "features": {
     "minecraft:unbreakable": true
   }
@@ -33,6 +35,7 @@ An example of a tagged feature would be this:
 
 ```json
 {
+  // ...
   "features": {
     "minecraft:dye_leather": "#00FFC0"
   }

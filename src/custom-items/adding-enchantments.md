@@ -6,6 +6,7 @@ For example, you could add efficiency 10 to an item like this:
 
 ```json
 {
+  // ...
   "enchantments": [
     {
       "id": "minecraft:efficiency",
@@ -21,6 +22,7 @@ Adding unbreaking 4 to it would look like this:
 
 ```json
 {
+  // ...
   "enchantments": [
     {
       "id": "minecraft:efficiency",
